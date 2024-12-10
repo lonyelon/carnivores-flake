@@ -1,0 +1,313 @@
+
+weapons {
+{
+ name  = 'Pistol'
+ file  = 'pistol.car'
+ pic   = 'bullet1.tga'
+ power = 2
+ prec  = 0.8
+ loud  = 0.8
+ rate  = 1.6
+ shots = 8
+}
+
+{
+ name  = 'Shotgun'
+ file  = 'shotgun.car'
+ pic   = 'bullet2.tga'
+ power = 1
+ prec  = 0.3
+ loud  = 1.5
+ rate  = 1.2
+ trace = 6
+ shots = 7
+} 
+
+
+{
+ name  = 'DB Shotgun'
+ file  = 'dbsgun.car'
+ pic   = 'bullet2.tga'
+ fall  = 1
+ power = 1
+ prec  = 0.2
+ loud  = 1.9
+ rate  = 1.2
+ trace = 6
+ shots = 6
+ reload= 2
+} 
+
+
+{
+ name  = 'X-Bow'
+ file  = 'x_bow.car'
+ pic   = 'bullet4.tga'
+ shots = 6
+ power = 6
+ prec  = 1.0
+ loud  = 0.4
+ rate  = 1.0
+}
+
+{
+ name  = 'Omega-Rifle'
+ file  = 'rifle.car'
+ pic   = 'bullet3.tga'
+ power = 10
+ prec  = 2.0
+ loud  = 10.0
+ rate  = 4.0
+ shots = 1000
+}
+
+{
+ name  = 'Sniper Rifle'
+ file  = 'sniper.car'
+ pic   = 'bullet3.tga'
+ power = 4
+ optic = 1
+ prec  = 2.0
+ loud  = 1.4
+ rate  = 1.0
+ shots = 7
+}
+
+
+
+}  //==== end of weapons =========//
+
+
+characters {
+
+{
+ name    = 'Hunter'
+ file    = 'hunter1.car'
+ ai      = 0
+ health  = 1
+}
+
+{    
+ name    = 'Pig'
+ file    = 'pig1.car'
+ ai      = 1
+ health  = 0
+ mass    = 0.15  
+}
+
+
+{
+ name   = 'Archaeopteryx'
+ file   = 'archeo.car'
+ ai     = 2
+ health = 0
+ mass   = 0.05
+}
+
+
+
+
+
+//=========================
+
+{
+ name      = 'Brontotherium'
+ file      = 'bronto.car'
+ ai        = 10
+ mass      = 3
+ length    = 6
+ radius    = 750
+ health    = 7
+ basescore = 5
+ smell     = 0.65
+ hear      = 0.7
+ look      = 0.5
+ shipdelta = 112
+}
+
+{
+ name = 'Wild Boar'
+ file = 'hog.car'
+ ai        = 11
+ scale0    = 800
+ scaleA    = 400
+ mass      = 0.8
+ length    = 4
+ radius    = 472
+ health    = 8
+ basescore = 6
+ smell     = 0.6 
+ hear      = 0.75
+ look      = 0.6
+ shipdelta = 64
+}
+
+{
+ name = 'Canis Dirus'
+ file = 'wolf.car'
+ ai        = 12
+ mass      = 0.5
+ length    = 3.5
+ radius    = 418
+ scale0    = 800
+ scaleA    = 400
+ health    = 7
+ basescore = 7
+ smell     = 0.85
+ hear      = 0.7
+ look      = 0.75
+ shipdelta = 48
+ danger    = TRUE
+}
+
+{
+ name = 'Woolly Rhinoceros'
+ file = 'Rhino.car'
+ ai        = 13
+ mass      = 2.5
+ length    = 5
+ radius    = 512
+ health    = 9
+ basescore = 10
+ scale0    = 800
+ scaleA    = 400
+ smell     = 0.7
+ hear      = 0.8
+ look      = 0.4
+ shipdelta = 80
+}
+
+{
+ name = 'Diatryma'
+ file = 'diatr.car'
+ ai        = 14
+ mass      = 0.3
+ length    = 2.2
+ radius    = 220
+ health    = 6
+ basescore = 9
+ smell     = 0.75 
+ hear      = 0.5
+ look      = 0.65
+ shipdelta = 40
+}
+
+{
+ name = 'Megaloceros'
+ file = 'deer.car'
+ ai        = 15
+ mass      = 0.6
+ length    = 4
+ radius    = 360
+ health    = 6
+ basescore = 12
+ scaleA    = 400
+ smell     = 0.7
+ hear      = 0.8
+ look      = 0.6
+ shipdelta = 64
+}
+
+{
+ name = 'Omega Smilodon'
+ file = 'smilo.car'
+ ai        = 16
+ mass      = 1.2
+ length    = 5
+ radius    = 1000
+ health    = 10
+ basescore = 15
+ scaleA    = 400
+ smell     = 5.0
+ hear      = 5.0
+ look      = 5.0
+ shipdelta = 80
+ danger    = TRUE
+}
+
+{
+ name = 'Woolly Mammoth'
+ file = 'mamm.car'
+ ai        = 17
+ mass      = 5.5
+ length    = 10
+ radius    = 750
+ health    = 16
+ basescore = 18
+ scaleA    = 400
+ smell     = 0.8
+ hear      = 0.85
+ look      = 0.6
+ shipdelta = 192
+}
+
+{
+ name = 'Cave Bear'
+ file = 'bear.car'
+ ai        = 18
+ mass      = 2.5
+ length    = 4.5
+ radius    = 560
+ health    = 15
+ basescore = 25
+ smell     = 0.95 
+ hear      = 0.85 
+ look      = 0.8
+ shipdelta = 90
+ danger    = TRUE
+}
+
+
+{
+ name = 'Yeti'
+ file = 'bigfoot.car'
+ ai        = 19
+ mass      = 1.5
+ length    = 4.5
+ radius    = 560
+ health    = 18
+ basescore = 50
+ smell     = 0.95 
+ hear      = 1.00 
+ look      = 0.95
+ shipdelta = 60
+ danger    = TRUE
+}
+
+} //===== end of characters ==========//
+
+
+prices {
+ start= 100
+ area = 20
+ area = 50
+ area = 100
+ area = 150
+ area = 200
+
+ dino = 10
+ dino = 15
+ dino = 20
+ dino = 30
+ dino = 50
+ dino = 100
+ dino = 250
+ dino = 300
+ dino = 500
+ dino = 1000
+
+ weapon = 20
+ weapon = 100
+ weapon = 150
+ weapon = 50
+ weapon = 100
+ weapon = 200
+
+ acces  = 0
+ acces  = 0
+ acces  = 0
+ acces  = 0
+ acces  = 0
+}
+
+.
