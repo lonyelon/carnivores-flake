@@ -1,12 +1,12 @@
 # Carnivores Flake
 
-Run all the old Carnivores games using Nix flakes.
+Run all the old Carnivores games using Nix.
 
-The flake will handle the download, extraction and wine setup for you.
+This flake will handle the download, extraction and Wine setup for you.
 
 ## How to play
 
-Each game can be launched by running this flake:
+Each game can be launched by running:
 
 ```sh
 nix run github:lonyelon/carnivores-flake#<game>
@@ -71,6 +71,12 @@ Savefiles cannot be created nor deleted, money cannot be earned, settings cannot
 
 To make the games playable, I have added a default savefile with all the money you will ever need, alongside sane settings.
 This solves *most* problems, except the trophy room issue, which I do not expect to fix.
+
+## Known issues
+
+- Right now, Carnivores 2 has the mouse inverted. This may me due to a corrupt savefile.
+- Since this game has a low resolution, on exit from the hunt it breaks.
+  To fix this issue you may change your resolution *before* running the game.
 
 ## Legal disclaimer
 
