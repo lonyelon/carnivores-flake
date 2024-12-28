@@ -49,6 +49,7 @@ in pkgs.stdenv.mkDerivation rec {
     mkdir -p $out/bin
     cat > $out/bin/${name} <<EOF
     #!${pkgs.bash}/bin/bash
+    xrandr -s 800x600 --rate 60
     cd $out/game
     exec ${pkgs.wine}/bin/wine ${name}.EXE "\$@"
     EOF
