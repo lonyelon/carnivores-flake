@@ -35,7 +35,6 @@
           name = "HUNTSOFT";
           gameSource = carnSource;
           trophyFile = ./savefiles/carn1.sav;
-          isSourceIso = true;
         });
 
         # FIXME: mouse is inverted for some reason (maybe the savefile?).
@@ -44,7 +43,6 @@
           name = "Carn2";
           gameSource = carn2Source;
           trophyFile = ./savefiles/carn2.sav;
-          isSourceIso = true;
         });
 
         # FIXME: same issue as the carn2 derivation.
@@ -53,7 +51,6 @@
           name = "Carn2";
           gameSource = carn2Source;
           trophyFile = ./savefiles/carn2Dense.sav;
-          isSourceIso = true;
         });
 
         iceAge = (import ./commonDerivation.nix {
@@ -62,7 +59,6 @@
           gameSource = iceAgeSource;
           trophyFile = ./savefiles/iceAge.sav;
           resFile = ./savefiles/iceAge.txt;
-          isSourceIso = true;
         });
 
         iceAgeDense = (import ./commonDerivation.nix {
@@ -71,7 +67,6 @@
           gameSource = iceAgeSource;
           trophyFile = ./savefiles/iceAgeDense.sav;
           resFile = ./savefiles/iceAge.txt;
-          isSourceIso = true;
         });
 
         iceAgeSergioCustom = (import ./commonDerivation.nix {
@@ -80,7 +75,6 @@
           gameSource = iceAgeSource;
           trophyFile = ./savefiles/iceAgeDense.sav;
           resFile = ./savefiles/iceAgeSergioCustom.txt;
-          isSourceIso = true;
         });
       };
     };

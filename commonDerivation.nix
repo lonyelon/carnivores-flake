@@ -1,18 +1,12 @@
 { pkgs
 , name
 , gameSource
-, isSourceIso
 , patchSource ? null
 , trophyFile ? null
 , resFile ? null
 }: let
-  unpackSourceScript = if isSourceIso then ''
+  unpackSourceScript = ''
     7z x ${gameSource} -y
-    unshield x data1.cab
-    mv Program_Executable_Files/* $out/game
-  '' else ''
-    bchunk ${gameSource}/Carnivores.bin ${gameSource}/Carnivores.cue Carnivores
-    7z x Carnivores.iso -y
     unshield x data1.cab
     mv Program_Executable_Files/* $out/game
   '';
@@ -39,7 +33,7 @@ in pkgs.stdenv.mkDerivation rec {
 
   src = gameSource;
 
-  nativeBuildInputs = with pkgs; [ unzip p7zip unshield bchunk ];
+  nativeBuildInputs = with pkgs; [ unzip p7zip unshield ];
   buildInputs = with pkgs; [ wine ];
 
   fileSystemCaseSensitivity = "caseInsensitive";
