@@ -6,10 +6,10 @@ This flake will handle the download, extraction and Wine setup for you.
 
 <table>
   <tr><b>>>>Go buy the
-    <a href="https://store.steampowered.com/app/293520/Carnivores_Dinosaur_Hunter_Reborn/">
+    <a href="https://store.steampowered.com/app/1461030/Carnivores_Dinosaur_Hunt">
       latest Carnivores game on Steam
     </a>
-    (Carnivores: Dinosaur Hunter Reborn). It is actually good!</b>
+    (Carnivores: Dinosaur Hunt). It is actually good!</b>
   </tr>
 </table>
 
