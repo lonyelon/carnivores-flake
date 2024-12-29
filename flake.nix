@@ -43,7 +43,7 @@
           inherit pkgs;
           name = "Carn2";
           gameSource = carn2Source;
-          trophyFile = ./savefiles/iceAge.sav;
+          trophyFile = ./savefiles/carn2.sav;
           isSourceIso = true;
         });
 
@@ -52,7 +52,7 @@
           inherit pkgs;
           name = "Carn2";
           gameSource = carn2Source;
-          trophyFile = ./savefiles/iceAgeDense.sav;
+          trophyFile = ./savefiles/carn2Dense.sav;
           isSourceIso = true;
         });
 
