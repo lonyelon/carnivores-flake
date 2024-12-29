@@ -11,9 +11,9 @@
       system = "x86_64-linux"; # Adjust if you're on a different system
       pkgs = import nixpkgs { inherit system; };
 
-      carnSource = pkgs.fetchzip {
-        url = "https://www.old-games.com/getfile/17080";
-        hash = "";
+      carnSource = pkgs.fetchurl {
+        url = "https://archive.org/download/carnivores_game_1998/Carnivores.iso";
+        hash = "sha256-pqSOZAq5SEX9jdb8TxL1qJ9GKpkk5Dorq80277OF6Qc=";
       };
 
       carn2Source = pkgs.fetchurl {
@@ -34,7 +34,8 @@
           inherit pkgs;
           name = "HUNTSOFT";
           gameSource = carnSource;
-          isSourceIso = false;
+          trophyFile = ./savefiles/carn1.sav;
+          isSourceIso = true;
         });
 
         # FIXME: mouse is inverted for some reason (maybe the savefile?).
@@ -42,7 +43,7 @@
           inherit pkgs;
           name = "Carn2";
           gameSource = carn2Source;
-          trophyFile = ./savefiles/default.sav;
+          trophyFile = ./savefiles/iceAge.sav;
           isSourceIso = true;
         });
 
@@ -51,7 +52,7 @@
           inherit pkgs;
           name = "Carn2";
           gameSource = carn2Source;
-          trophyFile = ./savefiles/dense.sav;
+          trophyFile = ./savefiles/iceAgeDense.sav;
           isSourceIso = true;
         });
 
@@ -59,8 +60,8 @@
           inherit pkgs;
           name = "iceage";
           gameSource = iceAgeSource;
-          trophyFile = ./savefiles/default.sav;
-          resFile = ./savefiles/default.txt;
+          trophyFile = ./savefiles/iceAge.sav;
+          resFile = ./savefiles/iceAge.txt;
           isSourceIso = true;
         });
 
@@ -68,8 +69,8 @@
           inherit pkgs;
           name = "iceage";
           gameSource = iceAgeSource;
-          trophyFile = ./savefiles/dense.sav;
-          resFile = ./savefiles/default.txt;
+          trophyFile = ./savefiles/iceAgeDense.sav;
+          resFile = ./savefiles/iceAge.txt;
           isSourceIso = true;
         });
 
@@ -77,8 +78,8 @@
           inherit pkgs;
           name = "iceage";
           gameSource = iceAgeSource;
-          trophyFile = ./savefiles/dense.sav;
-          resFile = ./savefiles/sergioCustom.txt;
+          trophyFile = ./savefiles/iceAgeDense.sav;
+          resFile = ./savefiles/iceAgeSergioCustom.txt;
           isSourceIso = true;
         });
       };

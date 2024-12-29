@@ -11,7 +11,10 @@
     unshield x data1.cab
     mv Program_Executable_Files/* $out/game
   '' else ''
-    cp -r ${gameSource}/* $out/game
+    bchunk ${gameSource}/Carnivores.bin ${gameSource}/Carnivores.cue Carnivores
+    7z x Carnivores.iso -y
+    unshield x data1.cab
+    mv Program_Executable_Files/* $out/game
   '';
 
   unpackPatchScript = if patchSource != null then ''
@@ -36,7 +39,7 @@ in pkgs.stdenv.mkDerivation rec {
 
   src = gameSource;
 
-  nativeBuildInputs = with pkgs; [ unzip p7zip unshield ];
+  nativeBuildInputs = with pkgs; [ unzip p7zip unshield bchunk ];
   buildInputs = with pkgs; [ wine ];
 
   fileSystemCaseSensitivity = "caseInsensitive";
@@ -49,7 +52,7 @@ in pkgs.stdenv.mkDerivation rec {
     mkdir -p $out/bin
     cat > $out/bin/${name} <<EOF
     #!${pkgs.bash}/bin/bash
-    xrandr -s 800x600 --rate 60
+    #xrandr -s 800x600 --rate 60
     cd $out/game
     exec ${pkgs.wine}/bin/wine ${name}.EXE "\$@"
     EOF
