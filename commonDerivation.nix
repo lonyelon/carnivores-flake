@@ -1,4 +1,5 @@
 { pkgs
+, pkgs-wine7
 , name
 , gameSource
 , patchSource ? null
@@ -34,7 +35,7 @@ in pkgs.stdenv.mkDerivation rec {
   src = gameSource;
 
   nativeBuildInputs = with pkgs; [ unzip p7zip unshield ];
-  buildInputs = with pkgs; [ wine ];
+  buildInputs = [ pkgs-wine7.wine pkgs.gamescope ];
 
   fileSystemCaseSensitivity = "caseInsensitive";
 
@@ -46,9 +47,8 @@ in pkgs.stdenv.mkDerivation rec {
     mkdir -p $out/bin
     cat > $out/bin/${name} <<EOF
     #!${pkgs.bash}/bin/bash
-    #xrandr -s 800x600 --rate 60
     cd $out/game
-    exec ${pkgs.wine}/bin/wine ${name}.EXE "\$@"
+    exec ${pkgs.gamescope}/bin/gamescope -w 1024 -h 768 -f --force-grab-cursor --expose-wayland -- ${pkgs-wine7.wine}/bin/wine ${name}.EXE "\$@"
     EOF
     chmod +x $out/bin/${name}
   '' + copyTrophyFileScript + copyResFileScript;

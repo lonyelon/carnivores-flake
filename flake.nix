@@ -2,14 +2,16 @@
   description = "Run the original Carnivores Ice Age game from 2001.";
 
   inputs = {
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
     # This revision of NixPkgs is required because it provides Wine 7.
-    nixpkgs.url = "github:NixOS/nixpkgs/e3945057be467f32028ff6b67403be08285ad8c8";
+    nixpkgs-wine7.url = "github:NixOS/nixpkgs/e3945057be467f32028ff6b67403be08285ad8c8";
   };
 
-  outputs = { self, nixpkgs, ... }:
+  outputs = { self, nixpkgs, nixpkgs-wine7, ... }:
     let
       system = "x86_64-linux"; # Adjust if you're on a different system
       pkgs = import nixpkgs { inherit system; };
+      pkgs-wine7 = import nixpkgs-wine7 { inherit system; };
 
       carnSource = pkgs.fetchurl {
         url = "https://archive.org/download/carnivores_game_1998/Carnivores.iso";
@@ -31,7 +33,7 @@
       packages.${system} = {
         # TODO Add the infinite money patch to this one too.
         carn1 = (import ./commonDerivation.nix {
-          inherit pkgs;
+          inherit pkgs pkgs-wine7;
           name = "HUNTSOFT";
           gameSource = carnSource;
           trophyFile = ./savefiles/carn1.sav;
@@ -39,7 +41,7 @@
 
         # FIXME: mouse is inverted for some reason (maybe the savefile?).
         carn2 = (import ./commonDerivation.nix {
-          inherit pkgs;
+          inherit pkgs pkgs-wine7;
           name = "Carn2";
           gameSource = carn2Source;
           trophyFile = ./savefiles/carn2.sav;
@@ -47,14 +49,14 @@
 
         # FIXME: same issue as the carn2 derivation.
         carn2Dense = (import ./commonDerivation.nix {
-          inherit pkgs;
+          inherit pkgs pkgs-wine7;
           name = "Carn2";
           gameSource = carn2Source;
           trophyFile = ./savefiles/carn2Dense.sav;
         });
 
         iceAge = (import ./commonDerivation.nix {
-          inherit pkgs;
+          inherit pkgs pkgs-wine7;
           name = "iceage";
           gameSource = iceAgeSource;
           trophyFile = ./savefiles/iceAge.sav;
@@ -62,7 +64,7 @@
         });
 
         iceAgeDense = (import ./commonDerivation.nix {
-          inherit pkgs;
+          inherit pkgs pkgs-wine7;
           name = "iceage";
           gameSource = iceAgeSource;
           trophyFile = ./savefiles/iceAgeDense.sav;
@@ -70,7 +72,7 @@
         });
 
         iceAgeSergioCustom = (import ./commonDerivation.nix {
-          inherit pkgs;
+          inherit pkgs pkgs-wine7;
           name = "iceage";
           gameSource = iceAgeSource;
           trophyFile = ./savefiles/iceAgeDense.sav;
